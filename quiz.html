@@ -41,16 +41,16 @@
 <script>
     var max_econ, max_dipl, max_govt, max_scty; // Max possible scores
     max_econ = max_dipl = max_govt = max_scty = 0;
-    var econ, dipl, govt, scty; // User's scores
-    econ = dipl = govt = scty = 0;
+    var consumption, expression, engagement, integration; // User's scores
+    consumption = expression = engagement = integration = 0;
     var qn = 0; // Question number
     var prev_answer = null;
     init_question();
     for (var i = 0; i < questions.length; i++) {
-        max_econ += Math.abs(questions[i].effect.econ)
-        max_dipl += Math.abs(questions[i].effect.dipl)
-        max_govt += Math.abs(questions[i].effect.govt)
-        max_scty += Math.abs(questions[i].effect.scty)
+        max_econ += Math.abs(questions[i].effect.consumption)
+        max_dipl += Math.abs(questions[i].effect.expression)
+        max_govt += Math.abs(questions[i].effect.engagement)
+        max_scty += Math.abs(questions[i].effect.integration)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -66,10 +66,10 @@
     }
 
     function next_question(mult) {
-        econ += mult*questions[qn].effect.econ
-        dipl += mult*questions[qn].effect.dipl
-        govt += mult*questions[qn].effect.govt
-        scty += mult*questions[qn].effect.scty
+        consumption += mult*questions[qn].effect.consumption
+        expression += mult*questions[qn].effect.expression
+        engagement += mult*questions[qn].effect.engagement
+        integration += mult*questions[qn].effect.integration
         qn++;
         prev_answer = mult;
         if (qn < questions.length) {
@@ -83,10 +83,10 @@
             return;
         }
         qn--;
-        econ -= prev_answer * questions[qn].effect.econ;
-        dipl -= prev_answer * questions[qn].effect.dipl;
-        govt -= prev_answer * questions[qn].effect.govt;
-        scty -= prev_answer * questions[qn].effect.scty;
+        consumption -= prev_answer * questions[qn].effect.consumption;
+        expression -= prev_answer * questions[qn].effect.expression;
+        engagement -= prev_answer * questions[qn].effect.engagement;
+        integration -= prev_answer * questions[qn].effect.integration;
         prev_answer = null;
         init_question();
 
@@ -96,10 +96,10 @@
     }
     function results() {
         location.href = `results.html`
-            + `?e=${calc_score(econ,max_econ)}`
-            + `&d=${calc_score(dipl,max_dipl)}`
-            + `&g=${calc_score(govt,max_govt)}`
-            + `&s=${calc_score(scty,max_scty)}`
+            + `?e=${calc_score(consumption,max_econ)}`
+            + `&d=${calc_score(expression,max_dipl)}`
+            + `&g=${calc_score(engagement,max_govt)}`
+            + `&s=${calc_score(integration,max_scty)}`
     }
 </script>
 </body>
