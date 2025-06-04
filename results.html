@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     
-    <title>診断結果｜日本語版8values</title>
+    <title>診断結果｜日本語版TwistedScale</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 <script type="application/javascript" src="ideologies.js"></script>
 
 <body>
-<h1 class="top">日本語版8values</h1>
+<h1 class="top">日本語版TwistedScale</h1>
 <hr>
 
 <h1>診断結果</h1>
@@ -102,8 +102,8 @@
         <p>もっと詳しく知りたい？左派（翼）のあなたは<a href='https://leftvalues.github.io/'>LeftValues</a>、右派（翼）のあなたは<a href='https://rightvaluestest.github.io'>RightValues</a>へ（ともに日本語対応）！また、フェミニズムに興味のある方は、<a href='https://femscale.github.io/'>FemScale</a>も参考にしてください。<br><br>本診断の結果は、URLをコピー、または下の画像を保存することでシェアできます（スクショも大歓迎です）。</p>
     </div>
     <div class="share">
-        <a id="btnDownload" download="8values-ja_results.png" href="">Download</a>
-        <p id="twitter-share-button"><a href="https://twitter.com/share?url='https://8values-ja.github.io'&text='すぐできる政治思想診断！あなたの思想をチェックしよう！'&hashtags=8values,8valuesJa">Tweet!</a></p><input id="copyTarget" type="text" value="https://8values-ja.github.io" readonly>
+        <a id="btnDownload" download="TwistedScale-ja_results.png" href="">Download</a>
+        <p id="twitter-share-button"><a href="https://twitter.com/share?url='https://twistedscale.github.io'&text='すぐできる政治思想診断！あなたの思想をチェックしよう！'&hashtags=TwistedScale,TwistedScaleJa">Tweet!</a></p><input id="copyTarget" type="text" value="https://twistedscale.github.io" readonly>
         <button id="btnCopyurl" onclick="copyToClipboard()">Copy</button>
     </div>
 </div>
@@ -202,7 +202,7 @@ function setLabel(val,ary) {
         const tweetTextAfter = "」だよ！あなたは？";
         const concatenated_str = tweetTextBefore + ideology + tweetTextAfter;
         const con_encoded = encodeURIComponent(concatenated_str);
-        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=8values,8valuesJa\">Tweet!</a>';
+        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=TwistedScale,TwistedScaleJa\">Tweet!</a>';
 
 //Copy Result URL
     function copyResultURL(){
@@ -284,7 +284,7 @@ function setLabel(val,ary) {
         ctx.fillStyle="#222222"
         ctx.font="700 55px 'Noto Sans JP'"
         ctx.textAlign="left"
-        ctx.fillText("日本語版8values", 20, 90)
+        ctx.fillText("日本語版TwistedScale", 20, 90)
         ctx.font="45px 'Noto Sans JP'"
         ctx.fillText(ideology, 20, 140)
 
